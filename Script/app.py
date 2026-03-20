@@ -2,9 +2,22 @@ import streamlit as st
 import joblib
 import numpy as np
 
-# Load model and features
-model = joblib.load("../Models/student_rf_model.pkl")
-features = joblib.load("../Models/features.pkl")
+import joblib
+import os
+
+# Get current file directory (Script/)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Go one level up to project root
+ROOT_DIR = os.path.dirname(BASE_DIR)
+
+# Build correct path
+model_path = os.path.join(ROOT_DIR, "Models", "student_rf_model.pkl")
+features_path = os.path.join(ROOT_DIR, "Models", "features.pkl")
+
+# Load files
+model = joblib.load(model_path)
+features = joblib.load(features_path)
 
 st.title("🎓 Student Performance Predictor")
 
