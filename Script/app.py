@@ -27,6 +27,9 @@ st.write("Enter student details:")
 g1 = st.number_input("G1 (First Period Grade)", min_value=0, max_value=20, value=10)
 g2 = st.number_input("G2 (Second Period Grade)", min_value=0, max_value=20, value=10)
 
+
+
+
 # Predict button
 if st.button("Predict Final Grade (G3)"):
 
